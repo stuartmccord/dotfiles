@@ -4,6 +4,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'StanAngeloff/php.vim'
 
 call vundle#end()            " required
 
@@ -178,3 +180,14 @@ map <F6> <Insert>
 set incsearch
 
 set clipboard=unnamed
+
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
