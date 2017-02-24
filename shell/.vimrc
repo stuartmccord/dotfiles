@@ -176,3 +176,5 @@ map <C-n> :NERDTreeToggle<CR>
 map <F6> <Insert>
 
 set incsearch
+
+set clipboard=unnamed
